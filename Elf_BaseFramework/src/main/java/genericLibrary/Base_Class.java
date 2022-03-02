@@ -42,6 +42,7 @@ public class Base_Class implements FrameworkConstants {
 			driver = new ChromeDriver();
 			Reporter.log("Successfully Launched Chrome Browser", true);
 		} else if (browserName.equalsIgnoreCase("firefox")) {
+			
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 			Reporter.log("Successfully Launched Firefox Browser", true);
@@ -66,13 +67,13 @@ public class Base_Class implements FrameworkConstants {
 		homePage = loginPage.login(username, password);
 	}
 
-	@AfterMethod(alwaysRun = true)
-	public void logoutOfApplication() {
-		homePage.logout();
-	}
-
-	@AfterClass(alwaysRun = true)
-	public void closeTheBrowser() {
-		driver.quit();
-	}
+//	@AfterMethod(alwaysRun = true)
+//	public void logoutOfApplication() {
+//		homePage.logout();
+//	}
+//
+//	@AfterClass(alwaysRun = true)
+//	public void closeTheBrowser() {
+//		driver.quit();
+//	}
 }
